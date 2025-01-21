@@ -1,0 +1,18 @@
+import pandas as pd
+
+print(pd.__version__)
+
+data = {'col1':['1', '2', '3', 'teks'], 
+        'col2':['1', '2', '3', '4']}
+
+df = pd.DataFrame(data)
+df
+
+df.dtypes
+
+df_x = df.astype({'col2':'int'})
+df_x
+df_x.dtypes
+
+df.apply(pd.to_numeric, errors='coerce')
+
