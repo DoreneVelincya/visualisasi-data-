@@ -1,0 +1,13 @@
+import pandas as pd
+
+print(pd.__version__)
+
+d = {'dokter':['Budi', 'Wati', 'Iwan', 'Budi', 'Budi', 'Wati'], 
+     'pasien':['Abdul', 'Rahmat', 'Asep', 'Joko', 'Wiwin', 'Lisa']}
+
+df = pd.DataFrame(d)
+df
+
+df.groupby('dokter')['pasien'].count().to_frame()
+df.groupby('dokter')['pasien'].first().to_frame()
+df.groupby('dokter')['pasien'].last().to_frame()
