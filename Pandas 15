@@ -1,0 +1,14 @@
+import pandas as pd
+
+print(pd.__version__)
+
+data = {'nama':['Didi Kempot', 'Glenn Fredly', 'Mbah Surip'], 
+        'tempat_kelahiran':['Surakarta, Jawa Tengah', 'Jakarta, DKI Jakarta', 'Mojokerto, Jawa Timur']}
+df = pd.DataFrame(data)
+df
+
+df[['nama_depan', 'nama_belakang']] = df['nama'].str.split(' ', expand=True)
+df
+
+df[['kota', 'propinsi']] = df['tempat_kelahiran'].str.split(',', expand=True)
+df
