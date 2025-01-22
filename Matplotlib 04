@@ -1,0 +1,47 @@
+plt.subplot(2, 1, 1)
+plt.plot(x1, y1, 'ro-')
+plt.title('Multiple Subplots')
+plt.ylabel('Nilai $cos(x_1)$')
+
+plt.subplot(2, 1, 2)
+plt.plot(x2, y2, 'g.-')
+plt.ylabel('Nilai $cos(x_2)$')
+plt.xlabel('Nilai $x$')
+
+plt.show() 
+
+mu, sigma = 100, 15 # nilai mean dan nilai standard deviation
+
+x = mu + sigma * np.random.randn(10000) # normal distribution
+x 
+x.shape 
+
+plt.hist(x, 
+         bins=50, 
+         facecolor='g', 
+         alpha=0.50)
+
+plt.xlabel('Sumbu X')
+plt.ylabel('Sumbu Y')
+plt.title('Contoh Histogram')
+
+plt.text(45, 500, '$\mu=100,\ \sigma=15$')
+plt.grid()
+
+plt.show() 
+
+fig, ax = plt.subplots()
+
+ax.hist(x, 
+        bins=50, 
+        facecolor='b', 
+        alpha=0.25)
+
+ax.set_xlabel('Sumbu X')
+ax.set_ylabel('Sumbu Y')
+ax.set_title('Contoh Histogram')
+
+ax.text(45, 500, '$\mu=100,\ \sigma=15$')
+ax.grid()
+
+plt.show() 
