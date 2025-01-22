@@ -1,0 +1,10 @@
+import pandas as pd
+
+print(pd.__version__)
+
+d = {'kolom_satu':[1, 2, 3, 4, 5], 
+     'kolom dua':[10, 20, 30, 40, 50]}
+df = pd.DataFrame(d)
+df
+df.query('kolom_satu > 2')
+df.query('`kolom dua` > 30')
