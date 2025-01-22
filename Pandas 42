@@ -1,0 +1,10 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df = pd.read_csv('./data/titanicfull.csv')
+df.head()
+
+df.sort_values('age').head()
+df.sort_values('age', ascending=False).head()
+df.sort_values(['survived', 'age']).head()
