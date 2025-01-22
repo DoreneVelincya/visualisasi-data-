@@ -1,0 +1,9 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df = pd.read_csv('./data/titanicfull.csv')
+df.head()
+
+df.iloc[15:20, :].loc[:, 'name':'age']
+df.loc[:, 'name':'age'].iloc[15:20, :]
