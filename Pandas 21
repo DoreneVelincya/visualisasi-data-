@@ -1,0 +1,14 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df = pd.read_csv('./data/Iris.csv')
+df
+
+df.groupby('Species')['PetalLengthCm'].count().to_frame()
+df.groupby('Species')['PetalLengthCm'].mean().to_frame()
+df.groupby('Species')['PetalLengthCm'].median().to_frame()
+
+df.groupby('Species')['PetalLengthCm'].agg(['count', 'mean', 'median'])
+
+df.groupby('Species')['PetalLengthCm'].describe()
