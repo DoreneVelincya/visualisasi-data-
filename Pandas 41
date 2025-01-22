@@ -1,0 +1,14 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df = pd.read_csv('./data/titanicfull.csv')
+df.head()
+
+df.groupby('pclass').agg({'pclass':'count', 
+                          'age':['mean', 'max'], 
+                          'survived': 'mean'})
+df.groupby('pclass').agg(n_pass=('pclass', 'count'),
+                         avg_age=('age', 'mean'),
+                         max_age=('age', 'max'), 
+                         survival_rate=('survived', 'mean'))
