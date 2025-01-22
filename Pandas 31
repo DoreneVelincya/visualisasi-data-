@@ -1,0 +1,20 @@
+import pandas as pd
+
+print(pd.__version__)
+
+d = {'pelanggan':[11, 12, 13, 14], 
+     'kepuasan':['baik', 'cukup', 'buruk', 'cukup']}
+
+df = pd.DataFrame(d)
+df
+
+from pandas.api.types import CategoricalDtype
+
+tingkat_kepuasan = CategoricalDtype(['buruk', 'cukup', 'baik', 'sangat baik'], 
+                                    ordered=True)
+
+df['kepuasan'] = df['kepuasan'].astype(tingkat_kepuasan)
+df
+df = df.sort_values('kepuasan', ascending=True)
+df
+df[df['kepuasan'] >= 'cukup']
