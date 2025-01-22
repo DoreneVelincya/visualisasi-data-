@@ -1,0 +1,18 @@
+import pandas as pd
+
+print(pd.__version__)
+
+d = {
+'kode_area': [123, 456, 789, 321],
+'pabrik': [4, 2, 5, 0],
+'gudang': [2, 4, 7, 3],
+'toko': [64, 32, 15, 24]
+}
+
+df = pd.DataFrame(d)
+df
+
+df = df.melt(id_vars='kode_area', 
+             var_name='jenis_bangunan', 
+             value_name='jumlah')
+df
