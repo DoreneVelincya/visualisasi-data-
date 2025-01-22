@@ -1,0 +1,18 @@
+import pandas as pd
+
+print(pd.__version__)
+
+d = {'no_nota':[1, 1, 1, 2, 2, 3, 4, 5], 
+     'kopi': ['latte', 'cappuccino', 'espresso', 'latte', 'espresso', 'cappuccino', 'latte', 'espresso'],
+     'harga':[50, 60, 80, 150, 120, 60, 100, 40]}
+
+df = pd.DataFrame(d)
+df
+
+df.groupby('no_nota')['harga'].sum().to_frame()
+df['total_harga'] = df.groupby('no_nota')['harga'].transform(sum)
+df
+
+df.groupby('kopi')['harga'].sum().to_frame()
+df['total_omset'] = df.groupby('kopi')['harga'].transform(sum)
+df
