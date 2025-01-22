@@ -1,0 +1,17 @@
+import pandas as pd
+
+print(pd.__version__)
+
+data = {'nama': ['bayu', 'indra', 'devi', 'agni'],
+        'jenis_kelamin': ['L', 'L', 'P', 'L'], 
+        'usia': [23, 21, 22, 25]}
+
+df = pd.DataFrame(data)
+df
+
+df['nama'].str.cat(df['jenis_kelamin'], sep=', ').to_frame()
+df['nama_jk'] = df['nama'].str.cat(df['jenis_kelamin'], sep=', ')
+df
+df['nama'].str.cat(df['usia'].astype('str'), sep=' - ').to_frame()
+df['nama_usia'] = df['nama'].str.cat(df['usia'].astype('str'), sep=' - ')
+df
