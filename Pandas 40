@@ -1,0 +1,11 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df = pd.read_csv('./data/titanicfull.csv')
+df.head()
+
+grouped_df = df.groupby('sex')
+grouped_df.get_group('female').head(10)
+grouped_df = df.groupby('survived')
+grouped_df.get_group(1).head(10)
