@@ -1,0 +1,14 @@
+import pandas as pd
+
+print(pd.__version__)
+
+d = {'nama':['bejo', 'tejo', 'wati', 'tiwi', 'cecep'], 
+     'ipk':[2, '3', 3, 2.75, '3.25']}
+df = pd.DataFrame(d)
+df
+
+df.dtypes
+df['ipk'].apply(type)
+df['ipk'].apply(type).value_counts()
+df['ipk'] = df['ipk'].astype(float)
+df['ipk'].apply(type).value_counts()
