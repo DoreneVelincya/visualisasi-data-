@@ -1,0 +1,41 @@
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+print(matplotlib.__version__)
+print(np.__version__) 
+
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+
+plt.show()
+
+z = np.linspace(0, 1, 100)
+x = z * np.sin(20 * z)
+y = z * np.cos(20 * z)
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+
+ax.plot(x, y, z, color='red')
+
+ax.set(title='Contoh 3D Line Plot',
+       xlabel='Sumbu X',
+       ylabel='Sumbu Y',
+       zlabel='Sumbu Z')
+
+plt.show()
+
+z = np.linspace(0, 1, 100)
+x = z * np.sin(20 * z)
+y = z * np.cos(20 * z)
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+
+ax.scatter(x, y, z, color='green')
+
+ax.set(title='Contoh 3D Scatter Plot',
+       xlabel='Sumbu X',
+       ylabel='Sumbu Y',
+       zlabel='Sumbu Z')
+
+plt.show() 
