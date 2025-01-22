@@ -1,0 +1,63 @@
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+print(matplotlib.__version__)
+print(np.__version__)
+
+np.random.seed(2)
+data = np.random.normal(loc=100, scale=10, size=200)
+data 
+
+plt.boxplot(data, tick_labels=['Data'])
+
+plt.title('Simple Box Plot')
+plt.xlabel('Sumbu X')
+plt.ylabel('Sumbu Y')
+
+plt.grid()
+plt.show()
+
+plt.boxplot(data, tick_labels=['Data'], notch=True)
+
+plt.title('Notched Box Plot')
+plt.xlabel('Sumbu X')
+plt.ylabel('Sumbu Y')
+
+plt.show() 
+
+plt.boxplot(data, 
+            tick_labels=['Data'],
+            showfliers=True, 
+            flierprops={'markerfacecolor':'r', 'marker':'s'})
+
+plt.title('Pengaturan Marker')
+plt.xlabel('Sumbu X')
+plt.ylabel('Sumbu Y')
+
+plt.show() 
+
+plt.boxplot(data, tick_labels=['Data'], vert=False)
+
+plt.title('Horisontal Box Plot')
+plt.xlabel('Sumbu X')
+plt.ylabel('Sumbu Y')
+
+plt.show() 
+
+np.random.seed(10)
+data1 = np.random.normal(100, 10, 200)
+data2 = np.random.normal(80, 30, 200)
+data3 = np.random.normal(90, 20, 200)
+data4 = np.random.normal(70, 25, 200)
+
+data = [data1, data2, data3, data4]
+labels = ['Data 1', 'Data 2', 'Data 3', 'Data 4']
+
+plt.boxplot(data, tick_labels=labels)
+
+plt.title('Multiple Box Plot')
+plt.xlabel('Sumbu X')
+plt.ylabel('Sumbu Y')
+
+plt.show() 
