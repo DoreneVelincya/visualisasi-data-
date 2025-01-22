@@ -1,0 +1,15 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df = pd.read_csv('./data/Iris.csv')
+df.head()
+
+df['SepalWidthCm'].to_frame().head()
+part = 'Sepal'
+
+df[f'{part}WidthCm'].to_frame().head()
+df[['PetalWidthCm', 'PetalLengthCm']].head()
+part = 'Petal'
+
+df[[f'{part}WidthCm', f'{part}LengthCm']].head()
