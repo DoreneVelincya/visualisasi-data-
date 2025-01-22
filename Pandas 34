@@ -1,0 +1,24 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df = pd.DataFrame({'jenis_kelamin':['Pria', 'Wanita', 'lelaki', 'Lelaki', 'perempuan'], 
+                   'usia':[23, 21, 24, 22, 21], 
+                   'shift':['pagi', 'siang', 'Malam', 'Siang', 'pagi']})
+df
+
+df = df.applymap(lambda x: x.lower() if type(x) == str else x)
+df
+
+mapping = {'pria':'L',
+           'lelaki':'L',
+           'wanita':'P',
+           'perempuan':'P',
+           'pagi':1,
+           'siang':2,
+           'malam':3}
+
+df.applymap(mapping.get)
+df[['jenis_kelamin', 'shift']] = df[['jenis_kelamin', 'shift']].applymap(mapping.get)
+
+df
