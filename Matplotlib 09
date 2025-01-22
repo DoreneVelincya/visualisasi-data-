@@ -1,0 +1,39 @@
+import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib import style
+import numpy as np
+
+print(matplotlib.__version__)
+print(np.__version__) 
+
+def gambar_barplot():
+    data1 = [25,85, 75, 40, 60]
+    data2 = [40, 35, 20, 55, 10]
+    kategori = ['A', 'B', 'C', 'D', 'E']
+
+    x = np.arange(len(kategori))
+    
+    width = 0.35
+
+    plt.bar(x-width/2, data1, width, label='Data 1')
+    plt.bar(x+width/2, data2, width, label='Data 2')
+
+    plt.xticks(x, kategori)
+
+    plt.grid(linestyle='--', 
+             linewidth=1, 
+             axis='y',
+             alpha=0.75)
+
+    plt.xlabel('Kategori')
+    plt.ylabel('Jumlah')
+    plt.title('Contoh Grouped Bar Plot')
+
+    plt.legend()
+    plt.show()
+gambar_barplot() 
+
+plt.style.available 
+
+style.use('ggplot')
+gambar_barplot() 
