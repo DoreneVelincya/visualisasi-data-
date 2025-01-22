@@ -1,0 +1,24 @@
+import pandas as pd
+import numpy as np
+
+print(pd.__version__)
+print(np.__version__)
+
+data = {'A':[15, 15, 18, np.nan, 12], 
+        'B':[15, 15, 18, np.nan, 12]}
+
+df = pd.DataFrame(data)
+df
+
+df['A']
+type(df['A'])
+type(df)
+
+df['A'] == df['B']
+
+df['A'].equals(df['B'])
+
+df1 = df.copy(deep=True)
+
+df.equals(df1)
+df == df1
