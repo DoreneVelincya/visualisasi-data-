@@ -1,0 +1,44 @@
+import matplotlib
+import matplotlib.pyplot as plt
+
+print(matplotlib.__version__) 
+
+kategori = ['A', 'B', 'C', 'D', 'E']
+data = [215, 130, 245, 210, 225]
+plt.pie(data, 
+        labels=kategori,
+        autopct='%1.1f%%',
+        startangle=90)
+
+plt.title('Contoh Pie Plot')
+
+plt.show() 
+
+kategori = ['A', 'B', 'C', 'D', 'E']
+data = [215, 130, 245, 210, 225]
+warna = ['pink', 'cyan', '#e03364', 'yellowgreen', 'skyblue']
+plt.pie(data, 
+        labels=kategori,
+        colors=warna,
+        autopct='%1.1f%%',
+        startangle=90)
+
+plt.legend()
+plt.title('Contoh Pie Plot')
+
+plt.show() 
+
+kategori = ['A', 'B', 'C', 'D', 'E']
+data = [215, 130, 245, 210, 225]
+warna = ['pink', 'cyan', '#e03364', 'yellowgreen', 'skyblue']
+explode_var = [0., 0., 0.2, 0., 0.08]
+plt.pie(data, 
+        labels=kategori,
+        colors=warna,
+        explode=explode_var,
+        autopct='%1.1f%%',
+        startangle=90)
+
+plt.title('Contoh Exploded Pie Plot')
+
+plt.show() 
