@@ -1,0 +1,80 @@
+import matplotlib
+import matplotlib.pyplot as plt
+
+print(matplotlib.__version__) 
+
+x = [2,4,6,8,10,11,11.5,11.7]
+y = [1,1.5,2,2.5,3,3.5,4,4.5]
+plt.scatter(x, y, label='Data 1', color='r')
+
+plt.xlabel('Sumbu X')
+plt.ylabel('Sumbu Y')
+plt.title('Contoh Scatter Plot')
+
+plt.legend()
+
+plt.show() 
+
+x1 = [2,4,6,8,10,11,11.5,11.7]
+y1 = [1,1.5,2,2.5,3,3.5,4,4.5]
+
+x2 = [8,8.5,9,9.5,10,10.5,11]
+y2 = [3,3.5,3.7,4,4.5,5,5.2]
+plt.scatter(x1, y1, label='Data 1', color='r')
+plt.scatter(x2, y2, label='Data 2', color='b')
+
+plt.xlabel('Sumbu X')
+plt.ylabel('Sumbu Y')
+plt.title('Multiple Scatter Plot')
+
+plt.legend()
+plt.show()  
+
+x1 = [2,4,6,8,10,11,11.5,11.7]
+y1 = [1,1.5,2,2.5,3,3.5,4,4.5]
+
+x2 = [8,8.5,9,9.5,10,10.5,11]
+y2 = [3,3.5,3.7,4,4.5,5,5.2]
+plt.scatter(x1, y1, 
+            color='cyan',  
+            linewidths=2,  
+            marker='s',  
+            edgecolor='black',  
+            s=400) 
+  
+plt.scatter(x2, y2, 
+            color='yellow', 
+            linewidths=1, 
+            marker='^',  
+            edgecolor='blue',  
+            s=200) 
+
+plt.show() 
+
+from sklearn.datasets import load_iris
+iris = load_iris()
+features = iris['data'].T
+iris.keys()
+iris['data'] 
+iris['feature_names'] 
+features = iris['data'].T
+features 
+
+iris['target'] 
+
+iris['target_names'] 
+
+plt.scatter(features[0], features[1], 
+            alpha=0.2,
+            s=100*features[3], 
+            c=iris['target'], 
+            cmap='viridis')
+
+plt.xlabel(iris['feature_names'][0])
+plt.ylabel(iris['feature_names'][1])
+plt.title('Iris Dataset')
+
+plt.colorbar()
+
+plt.show() 
+
