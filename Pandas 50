@@ -1,0 +1,16 @@
+import pandas as pd
+
+print(pd.__version__)
+
+d = {'penjual':['bejo', 'tejo', 'wati', 'bejo', 'cecep', 'tejo', 'wati', 'bejo'], 
+     'barang':['monitor', 'monitor', 'keyboard', 'mouse', 'keyboard', 'monitor', 'laptop', 'monitor']}
+
+df = pd.DataFrame(d)
+df
+
+cols = ['penjual', 'barang']
+
+for col in cols:
+    df[f'count_tiap_{col}'] =  df.groupby(col).cumcount() + 1
+    
+df
