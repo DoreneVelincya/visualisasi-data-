@@ -1,0 +1,14 @@
+import pandas as pd
+
+print(pd.__version__)
+
+s = pd.Series(range(1591683521, 1592201921, 3600))
+s = pd.to_datetime(s, unit='s')
+s.head()
+
+s = s.dt.tz_localize('UTC')
+s.head()
+s = s.dt.tz_convert('Asia/Jakarta')
+s.head()
+s = s.dt.tz_convert('Australia/Hobart')
+s.head()
