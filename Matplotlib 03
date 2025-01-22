@@ -1,0 +1,56 @@
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+print(matplotlib.__version__)
+print(np.__version__) 
+
+x = np.arange(0.0, 2.0, 0.01)
+x 
+
+s = np.sin(2 * np.pi * x)
+s
+
+fig, ax = plt.subplots() # OO Style
+
+ax.plot(x, s)
+ax.set(xlabel='nilai x', 
+       ylabel='nilai sin(x)',
+       title='Visualisasi nilai sin')
+ax.grid()
+
+plt.show() 
+
+x1 = np.linspace(0.0, 5.0, 100)
+x2 = np.linspace(0.0, 2.0, 100)
+
+y1 = np.cos(2 * np.pi * x1) 
+y2 = np.cos(2 * np.pi * x2)
+
+x1
+
+
+fig, (ax1, ax2) = plt.subplots(2, 1)
+fig.suptitle('Multiple Subplots')
+
+ax1.plot(x1, y1, 'ro-')
+ax1.set_ylabel('Nilai $cos(x_1)$')
+
+ax2.plot(x2, y2, 'g.-')
+ax2.set_ylabel('Nilai $cos(x_2)$')
+
+ax2.set_xlabel('Nilai x')
+
+plt.show() 
+
+plt.subplot(2, 1, 1)
+plt.plot(x1, y1, 'ro-')
+plt.title('Multiple Subplots')
+plt.ylabel('Nilai $cos(x_1)$')
+
+plt.subplot(2, 1, 2)
+plt.plot(x2, y2, 'g.-')
+plt.ylabel('Nilai $cos(x_2)$')
+plt.xlabel('Nilai $x$')
+
+plt.show() 
