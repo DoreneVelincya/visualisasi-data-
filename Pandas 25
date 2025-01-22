@@ -1,0 +1,16 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df = pd.read_csv('./data/titanicfull.csv')
+df
+
+pd.set_option('display.max_rows', 5)
+pd.set_option('display.max_columns', 6)
+pd.set_option('display.max_colwidth', 20)
+
+df
+pd.reset_option('^display.', silent=True)
+
+df
+pd.describe_option()
