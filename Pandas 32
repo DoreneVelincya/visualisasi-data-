@@ -1,0 +1,40 @@
+import pandas as pd
+import numpy as np
+
+print(pd.__version__)
+print(np.__version__)
+
+n_rows = 40
+n_cols = 5
+cols = tuple('ABCDE')
+
+df = pd.DataFrame(np.random.randint(1, 20, size=(n_rows, n_cols)), 
+                  columns=cols)
+df.head()
+
+df.head()
+df.plot(kind='line')
+df[['A', 'B']].plot(kind='line')
+
+df.head()
+df.plot(kind='bar')
+df[['A', 'B']].plot(kind='bar')
+df[['A', 'B']].head().plot(kind='bar')
+df[['A', 'B']].head().plot(kind='barh')
+
+df.head()
+df.plot(kind='area')
+df[['A', 'B']].head().plot(kind='area')
+
+df.head()
+df.plot(kind='box')
+
+df.head()
+df.plot(kind='hist')
+df[['A', 'B']].plot(kind='hist')
+
+df.head()
+df.plot(kind='kde')
+
+df.head()
+df.plot(x='A', y='B', kind='scatter')
