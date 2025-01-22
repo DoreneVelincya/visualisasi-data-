@@ -1,0 +1,14 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df_titanic = pd.read_csv('./data/titanicfull.csv')
+df_titanic.head()
+df_iris = pd.read_csv('./data/Iris.csv')
+df_iris.head()
+
+df_titanic.info(memory_usage='deep')
+df_iris.info(memory_usage='deep')
+
+df_titanic.memory_usage(deep=True)
+df_iris.memory_usage(deep=True)
