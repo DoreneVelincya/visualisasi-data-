@@ -1,0 +1,14 @@
+import pandas as pd
+
+print(pd.__version__)
+
+data = {'day':[1, 2, 10 ,25, 12], 
+        'month':[1, 2, 4, 5, 6], 
+        'year':[2000, 2001, 2010, 2015, 2020]}
+
+df = pd.DataFrame(data)
+df
+
+df['penaggalan'] = pd.to_datetime(df[['day', 'month', 'year']])
+df
+df.dtypes
