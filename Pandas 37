@@ -1,0 +1,20 @@
+import pandas as pd
+
+print(pd.__version__)
+
+df = pd.read_csv('./data/titanicfull.csv')
+df.head()
+
+df[(df['sex']=='female') & (df['age']>=60) & (df['embarked']=='S') & (df['survived']==1)]
+df[
+    (df['sex']=='female') & 
+    (df['age']>=60) & 
+    (df['embarked']=='S') & 
+    (df['survived']==1)
+]
+kr1 = df['sex']=='female'
+kr2 = df['age']>=60
+kr3 = df['embarked']=='S'
+kr4 = df['survived']==1
+
+df[kr1 & kr2 & kr3 & kr4]
